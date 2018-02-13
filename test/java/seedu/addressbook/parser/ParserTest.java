@@ -183,7 +183,7 @@ public class ParserTest {
         final String input = "find " + String.join(" ", keySet);
         final FindCommand result =
                 parseAndAssertCommandType(input, FindCommand.class);
-        assertEquals(keySet, result.getKeywords());
+        assertEquals(keySet, result.getNormalKeywords());
     }
 
     @Test
@@ -195,7 +195,7 @@ public class ParserTest {
         final String input = "find " + String.join(" ", keySet) + " " + String.join(" ", keySet);
         final FindCommand result =
                 parseAndAssertCommandType(input, FindCommand.class);
-        assertEquals(keySet, result.getKeywords());
+        assertEquals(keySet, result.getNormalKeywords());
     }
 
     /*

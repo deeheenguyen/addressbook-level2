@@ -22,12 +22,14 @@ public class FindCommand extends Command {
             + "Example: " + COMMAND_WORD + " alice bob charlie";
 
     private final Set<String> keywords;
+    private final Set<String> normalKeywords;
 
     public FindCommand(Set<String> keywords) {
         this.keywords = new HashSet<>();
         for (String word: keywords){
             this.keywords.add(word.toUpperCase());
         }
+        this.normalKeywords = keywords;
     }
 
     /**
@@ -37,6 +39,12 @@ public class FindCommand extends Command {
         return new HashSet<>(keywords);
     }
 
+    /**
+     * Returns a copy of normal keywords in this command.
+     */
+    public Set<String> getNormalKeywords(){
+        return new HashSet<>(normalKeywords);
+    }
     @Override
     public CommandResult execute() {
         final List<ReadOnlyPerson> personsFound = getPersonsWithNameContainingAnyKeyword(keywords);
