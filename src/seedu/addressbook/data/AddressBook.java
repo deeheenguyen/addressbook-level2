@@ -113,14 +113,14 @@ public class AddressBook {
     public UniquePersonList getAllPersons() {
         return new UniquePersonList(allPersons);
     }
-
+    
     /**
      * Returns a new UniqueTagList of all tags in the address book at the time of the call.
      */
     public UniqueTagList getAllTags() {
         return new UniqueTagList(allTags);
     }
-
+    
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object

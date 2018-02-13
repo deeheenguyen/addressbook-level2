@@ -52,7 +52,10 @@ public class UniquePersonList implements Iterable<Person> {
         }
         internalList.addAll(initialTags);
     }
-
+    /**
+    * get the Internal list of the current UniquePersonList
+    */
+    public List<Person> getInternalList() { return internalList; }
     /**
      * Constructs a list from the items in the given collection.
      * @param persons a collection of persons
@@ -71,6 +74,15 @@ public class UniquePersonList implements Iterable<Person> {
     public UniquePersonList(UniquePersonList source) {
         internalList.addAll(source.internalList);
     }
+
+
+    /**
+     * Sort the list by alphabetical
+     */
+    public void sortByAlphabetical() {
+        internalList.sort((person1, person2) -> person1.getName().toString().compareToIgnoreCase(person2.getName().toString()));
+    }
+
 
     /**
      * Returns an unmodifiable java List view with elements cast as immutable {@link ReadOnlyPerson}s.
