@@ -107,6 +107,20 @@
   find Charlie Betsy
 
 ##########################################################
+# test sort command
+##########################################################
+
+  # normal sort
+  sort
+  list
+
+  # should appear at the top
+  add a p/0 e/a@a.a pa/a
+  list
+  sort
+  list
+
+##########################################################
 # test delete person command
 ##########################################################
 
@@ -155,3 +169,4 @@
   # exits properly
   exit
   list
+
